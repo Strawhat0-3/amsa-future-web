@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from "react";
+import { useTheme } from "./ThemeProvider";
 
 interface Star {
   id: number;
@@ -22,6 +23,7 @@ interface ShootingStar {
 const AnimatedBackground: React.FC = () => {
   const [stars, setStars] = useState<Star[]>([]);
   const [shootingStars, setShootingStars] = useState<ShootingStar[]>([]);
+  const { theme } = useTheme();
 
   useEffect(() => {
     // Generate random stars
@@ -79,47 +81,52 @@ const AnimatedBackground: React.FC = () => {
       <div className="space-background"></div>
       <div className="grid-pattern"></div>
       
-      {/* Stars */}
-      {stars.map((star) => (
-        <div
-          key={star.id}
-          className="star"
-          style={{
-            width: `${star.size}px`,
-            height: `${star.size}px`,
-            top: star.top,
-            left: star.left,
-            opacity: Math.random() * 0.7 + 0.3,
-            animationDelay: star.animationDelay,
-            animation: `twinkle ${star.animationDuration} ease-in-out infinite`,
-          }}
-        />
-      ))}
+      {/* Stars - only show in dark mode */}
+      {theme === 'dark' && (
+        <>
+          {stars.map((star) => (
+            <div
+              key={star.id}
+              className="star"
+              style={{
+                width: `${star.size}px`,
+                height: `${star.size}px`,
+                top: star.top,
+                left: star.left,
+                opacity: Math.random() * 0.7 + 0.3,
+                animationDelay: star.animationDelay,
+                animation: `twinkle ${star.animationDuration} ease-in-out infinite`,
+              }}
+            />
+          ))}
+          
+          {/* Shooting stars - only in dark mode */}
+          {shootingStars.map((shootingStar) => (
+            <div
+              key={shootingStar.id}
+              className="shooting-star"
+              style={{
+                width: `${shootingStar.width}px`,
+                top: shootingStar.top,
+                left: shootingStar.left,
+                animation: `fade-in 0.5s ease-out ${shootingStar.delay}s forwards, fade-out 0.5s ease-in ${shootingStar.delay + shootingStar.duration}s forwards`,
+              }}
+            />
+          ))}
+        </>
+      )}
       
-      {/* Shooting stars */}
-      {shootingStars.map((shootingStar) => (
-        <div
-          key={shootingStar.id}
-          className="shooting-star"
-          style={{
-            width: `${shootingStar.width}px`,
-            top: shootingStar.top,
-            left: shootingStar.left,
-            animation: `fade-in 0.5s ease-out ${shootingStar.delay}s forwards, fade-out 0.5s ease-in ${shootingStar.delay + shootingStar.duration}s forwards`,
-          }}
-        />
-      ))}
-      
+      {/* Blobs for both themes but with different colors */}
       <div 
-        className="blob w-[800px] h-[800px] -top-[400px] -left-[200px]"
+        className={`blob w-[800px] h-[800px] -top-[400px] -left-[200px] ${theme === 'light' ? 'bg-blue-300' : 'bg-amsa-purple'}`}
         style={{ animation: "float 20s infinite alternate" }}
       ></div>
       <div 
-        className="blob w-[600px] h-[600px] top-[30%] -right-[300px] bg-amsa-blue"
+        className={`blob w-[600px] h-[600px] top-[30%] -right-[300px] ${theme === 'light' ? 'bg-blue-200' : 'bg-amsa-blue'}`}
         style={{ animation: "float 15s infinite alternate-reverse" }}
       ></div>
       <div 
-        className="blob w-[500px] h-[500px] -bottom-[200px] left-[20%]"
+        className={`blob w-[500px] h-[500px] -bottom-[200px] left-[20%] ${theme === 'light' ? 'bg-blue-100' : ''}`}
         style={{ animation: "float 25s infinite alternate" }}
       ></div>
     </div>

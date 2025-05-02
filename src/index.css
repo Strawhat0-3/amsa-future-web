@@ -7,6 +7,39 @@
 
 @layer base {
   :root {
+    /* Light mode */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 204 80% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 20% 90%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 20% 90%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 216 70% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 204 80% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
     --background: 220 60% 6%;
     --foreground: 210 40% 98%;
 
@@ -34,8 +67,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 199 85% 49%;
-
-    --radius: 0.5rem;
   }
 }
 
@@ -111,5 +142,9 @@
   .space-background {
     @apply absolute inset-0 overflow-hidden -z-20;
     background: linear-gradient(to bottom, #001F3F 0%, #070818 100%);
+  }
+
+  .light .space-background {
+    background: linear-gradient(to bottom, #87CEEB 0%, #E0F7FA 100%);
   }
 }
