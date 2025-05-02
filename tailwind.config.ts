@@ -54,10 +54,10 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				amsa: {
-					purple: '#9b87f5',
-					blue: '#1EAEDB',
+					purple: '#1EAEDB', // Changed from purple to bright blue
+					blue: '#33C3F0',   // Lighter blue
 					dark: '#1A1F2C',
-					light: '#D6BCFA',
+					light: '#C8F0FA',  // Light blue instead of light purple
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -97,12 +97,16 @@ export default {
 					'50%': { transform: 'translateY(-10px)' }
 				},
 				'pulse-glow': {
-					'0%, 100%': { boxShadow: '0 0 5px rgba(155, 135, 245, 0.5)' },
-					'50%': { boxShadow: '0 0 20px rgba(155, 135, 245, 0.8)' }
+					'0%, 100%': { boxShadow: '0 0 5px rgba(30, 174, 219, 0.5)' },
+					'50%': { boxShadow: '0 0 20px rgba(30, 174, 219, 0.8)' }
 				},
 				'spin-slow': {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' }
+				},
+				'twinkle': {
+					'0%, 100%': { opacity: '0.2' },
+					'50%': { opacity: '1' }
 				}
 			},
 			animation: {
@@ -112,12 +116,15 @@ export default {
 				'fade-out': 'fade-out 0.5s ease-out forwards',
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-glow': 'pulse-glow 2s infinite',
-				'spin-slow': 'spin-slow 15s linear infinite'
+				'spin-slow': 'spin-slow 15s linear infinite',
+				'twinkle': 'twinkle 3s ease-in-out infinite',
+				'twinkle-delay': 'twinkle 3s ease-in-out 0.5s infinite',
+				'twinkle-delay-2': 'twinkle 3s ease-in-out 1s infinite',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'hero-gradient': 'linear-gradient(90deg, rgba(26,31,44,1) 0%, rgba(59,29,105,1) 100%)',
-				'card-gradient': 'linear-gradient(225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%)',
+				'hero-gradient': 'linear-gradient(90deg, rgba(26,31,44,1) 0%, rgba(30,174,219,0.5) 100%)',
+				'card-gradient': 'linear-gradient(225deg, #33C3F0 0%, #1EAEDB 48%, #0FA0CE 100%)',
 			}
 		}
 	},
