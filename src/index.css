@@ -7,9 +7,9 @@
 
 @layer base {
   :root {
-    /* Light mode */
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    /* Light mode - Updated for Teyliom look */
+    --background: 210 50% 98%;
+    --foreground: 222 50% 20%;
 
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
@@ -17,16 +17,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 204 80% 50%;
+    --primary: 208 80% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 20% 90%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 204 80% 95%;
+    --secondary-foreground: 222 47% 20%;
 
-    --muted: 210 20% 90%;
+    --muted: 210 40% 93%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 216 70% 60%;
+    --accent: 196 80% 55%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -145,6 +145,16 @@
   }
 
   .light .space-background {
-    background: linear-gradient(to bottom, #87CEEB 0%, #E0F7FA 100%);
+    background: linear-gradient(to bottom, #6eb6fd 0%, #def1ff 100%);
   }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes move {
+  0% { transform: translateX(0) translateY(0) rotate(-45deg); }
+  100% { transform: translateX(-300px) translateY(300px) rotate(-45deg); }
 }

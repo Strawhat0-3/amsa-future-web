@@ -54,10 +54,16 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				amsa: {
-					purple: '#1EAEDB', // Changed from purple to bright blue
+					purple: '#1EAEDB', // Bright blue
 					blue: '#33C3F0',   // Lighter blue
 					dark: '#1A1F2C',
-					light: '#C8F0FA',  // Light blue instead of light purple
+					light: '#C8F0FA',  // Light blue
+				},
+				teyliom: {
+					blue: '#0080ff',    // Main Teyliom blue
+					accent: '#1a96f0',  // Accent blue for Teyliom
+					light: '#e6f7ff',   // Very light blue
+					dark: '#104c8a',    // Dark blue
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -105,8 +111,13 @@ export default {
 					'100%': { transform: 'rotate(360deg)' }
 				},
 				'twinkle': {
-					'0%, 100%': { opacity: '0.2' },
-					'50%': { opacity: '1' }
+					'0%, 100%': { opacity: '0.2', transform: 'scale(0.8)' },
+					'50%': { opacity: '1', transform: 'scale(1.2)' }
+				},
+				'star-pulse': {
+					'0%': { transform: 'scale(1)', opacity: '0.7' },
+					'50%': { transform: 'scale(1.3)', opacity: '1' },
+					'100%': { transform: 'scale(1)', opacity: '0.7' }
 				}
 			},
 			animation: {
@@ -120,11 +131,13 @@ export default {
 				'twinkle': 'twinkle 3s ease-in-out infinite',
 				'twinkle-delay': 'twinkle 3s ease-in-out 0.5s infinite',
 				'twinkle-delay-2': 'twinkle 3s ease-in-out 1s infinite',
+				'star-pulse': 'star-pulse 4s ease-in-out infinite',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'hero-gradient': 'linear-gradient(90deg, rgba(26,31,44,1) 0%, rgba(30,174,219,0.5) 100%)',
 				'card-gradient': 'linear-gradient(225deg, #33C3F0 0%, #1EAEDB 48%, #0FA0CE 100%)',
+				'teyliom-gradient': 'linear-gradient(225deg, #0080ff 0%, #1a96f0 48%, #104c8a 100%)',
 			}
 		}
 	},

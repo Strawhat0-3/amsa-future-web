@@ -39,7 +39,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <div className="text-2xl font-bold">
-            <span className="text-gradient">AMSA</span> Solutions
+            <span className={`${theme === 'light' ? 'text-teyliom-blue' : 'text-gradient'}`}>AMSA</span> Solutions
           </div>
         </div>
 
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className={`text-sm font-medium text-foreground/80 hover:${theme === 'light' ? 'text-teyliom-blue' : 'text-primary'} transition-colors`}
             >
               {item.name}
             </a>
@@ -64,7 +64,7 @@ const Header: React.FC = () => {
             {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
           
-          <Button className="bg-amsa-purple hover:bg-amsa-purple/90">
+          <Button className={`${theme === 'light' ? 'bg-teyliom-blue hover:bg-teyliom-blue/90' : 'bg-amsa-purple hover:bg-amsa-purple/90'}`}>
             Consultation
           </Button>
         </nav>
@@ -104,7 +104,7 @@ const Header: React.FC = () => {
               </a>
             ))}
             <div className="px-4 py-3">
-              <Button className="w-full bg-amsa-purple hover:bg-amsa-purple/90">
+              <Button className={`w-full ${theme === 'light' ? 'bg-teyliom-blue hover:bg-teyliom-blue/90' : 'bg-amsa-purple hover:bg-amsa-purple/90'}`}>
                 Consultation
               </Button>
             </div>

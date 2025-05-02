@@ -28,13 +28,13 @@ const AnimatedBackground: React.FC = () => {
   useEffect(() => {
     // Generate random stars
     const generateStars = () => {
-      const starCount = Math.floor(window.innerWidth / 8); // Responsive star count
+      const starCount = Math.floor(window.innerWidth / 4); // More stars (was /8)
       const newStars: Star[] = [];
       
       for (let i = 0; i < starCount; i++) {
         newStars.push({
           id: i,
-          size: Math.random() * 2 + 1,
+          size: Math.random() * 3 + 1, // Slightly larger stars
           top: `${Math.random() * 100}%`,
           left: `${Math.random() * 100}%`,
           animationDelay: `${Math.random() * 5}s`,
@@ -47,16 +47,16 @@ const AnimatedBackground: React.FC = () => {
     
     // Generate shooting stars
     const generateShootingStars = () => {
-      const shootingStarCount = 5;
+      const shootingStarCount = 8; // More shooting stars (was 5)
       const newShootingStars: ShootingStar[] = [];
       
       for (let i = 0; i < shootingStarCount; i++) {
         newShootingStars.push({
           id: i,
-          width: Math.random() * 100 + 50,
-          top: `${Math.random() * 60}%`,
+          width: Math.random() * 150 + 50, // Longer shooting stars
+          top: `${Math.random() * 70}%`, // Cover more of the screen
           left: `${Math.random() * 100}%`,
-          delay: Math.random() * 20,
+          delay: Math.random() * 15, // Appear more frequently
           duration: Math.random() * 3 + 1,
         });
       }
@@ -81,52 +81,48 @@ const AnimatedBackground: React.FC = () => {
       <div className="space-background"></div>
       <div className="grid-pattern"></div>
       
-      {/* Stars - only show in dark mode */}
-      {theme === 'dark' && (
-        <>
-          {stars.map((star) => (
-            <div
-              key={star.id}
-              className="star"
-              style={{
-                width: `${star.size}px`,
-                height: `${star.size}px`,
-                top: star.top,
-                left: star.left,
-                opacity: Math.random() * 0.7 + 0.3,
-                animationDelay: star.animationDelay,
-                animation: `twinkle ${star.animationDuration} ease-in-out infinite`,
-              }}
-            />
-          ))}
-          
-          {/* Shooting stars - only in dark mode */}
-          {shootingStars.map((shootingStar) => (
-            <div
-              key={shootingStar.id}
-              className="shooting-star"
-              style={{
-                width: `${shootingStar.width}px`,
-                top: shootingStar.top,
-                left: shootingStar.left,
-                animation: `fade-in 0.5s ease-out ${shootingStar.delay}s forwards, fade-out 0.5s ease-in ${shootingStar.delay + shootingStar.duration}s forwards`,
-              }}
-            />
-          ))}
-        </>
-      )}
+      {/* Stars - show in all modes now, with different opacity */}
+      {stars.map((star) => (
+        <div
+          key={star.id}
+          className="star"
+          style={{
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            top: star.top,
+            left: star.left,
+            opacity: theme === 'dark' ? Math.random() * 0.8 + 0.3 : Math.random() * 0.4 + 0.1,
+            animationDelay: star.animationDelay,
+            animation: `twinkle ${star.animationDuration} ease-in-out infinite`,
+          }}
+        />
+      ))}
+      
+      {/* Shooting stars - only in dark mode */}
+      {theme === 'dark' && shootingStars.map((shootingStar) => (
+        <div
+          key={shootingStar.id}
+          className="shooting-star"
+          style={{
+            width: `${shootingStar.width}px`,
+            top: shootingStar.top,
+            left: shootingStar.left,
+            animation: `fade-in 0.5s ease-out ${shootingStar.delay}s forwards, fade-out 0.5s ease-in ${shootingStar.delay + shootingStar.duration}s forwards, move ${shootingStar.duration}s linear ${shootingStar.delay}s forwards`,
+          }}
+        />
+      ))}
       
       {/* Blobs for both themes but with different colors */}
       <div 
-        className={`blob w-[800px] h-[800px] -top-[400px] -left-[200px] ${theme === 'light' ? 'bg-blue-300' : 'bg-amsa-purple'}`}
+        className={`blob w-[800px] h-[800px] -top-[400px] -left-[200px] ${theme === 'light' ? 'bg-teyliom-blue/30' : 'bg-amsa-purple'}`}
         style={{ animation: "float 20s infinite alternate" }}
       ></div>
       <div 
-        className={`blob w-[600px] h-[600px] top-[30%] -right-[300px] ${theme === 'light' ? 'bg-blue-200' : 'bg-amsa-blue'}`}
+        className={`blob w-[600px] h-[600px] top-[30%] -right-[300px] ${theme === 'light' ? 'bg-teyliom-accent/20' : 'bg-amsa-blue'}`}
         style={{ animation: "float 15s infinite alternate-reverse" }}
       ></div>
       <div 
-        className={`blob w-[500px] h-[500px] -bottom-[200px] left-[20%] ${theme === 'light' ? 'bg-blue-100' : ''}`}
+        className={`blob w-[500px] h-[500px] -bottom-[200px] left-[20%] ${theme === 'light' ? 'bg-blue-100/50' : ''}`}
         style={{ animation: "float 25s infinite alternate" }}
       ></div>
     </div>
