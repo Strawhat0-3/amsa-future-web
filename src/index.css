@@ -86,12 +86,15 @@
   .glow:hover::after {
     @apply opacity-100;
   }
-
-  .grid-pattern {
-    @apply absolute inset-0 bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='%239b87f5' fill-opacity='0.05'%3E%3Cpath d='M0 0h40v40H0V0zm20 20h20v20H20V20zM0 20h20v20H0V20z'/%3E%3C/g%3E%3C/svg%3E")] opacity-30;
-  }
   
   .blob {
     @apply absolute blur-3xl opacity-20 rounded-full bg-amsa-purple;
+  }
+}
+
+@layer components {
+  .grid-pattern {
+    @apply absolute inset-0 opacity-30;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='%239b87f5' fill-opacity='0.05'%3E%3Cpath d='M0 0h40v40H0V0zm20 20h20v20H20V20zM0 20h20v20H0V20z'/%3E%3C/g%3E%3C/svg%3E");
   }
 }
