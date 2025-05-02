@@ -2,8 +2,11 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Code, Zap, Rocket } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const HeroSection: React.FC = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <section
       id="home"
@@ -45,21 +48,21 @@ const HeroSection: React.FC = () => {
             </div>
             
             <div 
-              className="flex flex-wrap gap-4"
+              className="flex flex-col sm:flex-row gap-4"
               style={{opacity: 0, animation: "fade-in 0.8s ease-out 0.6s forwards"}}
             >
               <Button 
-                size="lg" 
-                className="bg-amsa-purple hover:bg-amsa-purple/90 text-white relative overflow-hidden group"
+                size={isMobile ? "default" : "lg"} 
+                className="w-full sm:w-auto bg-amsa-purple hover:bg-amsa-purple/90 text-white relative overflow-hidden group"
                 onClick={() => document.getElementById("contact")?.scrollIntoView()}
               >
                 <span className="relative z-10">Démarrer un projet</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-amsa-purple to-amsa-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </Button>
               <Button 
-                size="lg" 
+                size={isMobile ? "default" : "lg"} 
                 variant="outline"
-                className="border-amsa-blue/50 text-amsa-blue hover:bg-amsa-blue/10"
+                className="w-full sm:w-auto border-amsa-blue/50 text-amsa-blue hover:bg-amsa-blue/10"
                 onClick={() => document.getElementById("services")?.scrollIntoView()}
               >
                 Découvrir nos services
