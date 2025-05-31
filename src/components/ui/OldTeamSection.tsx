@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Laptop, Link } from "lucide-react";
 
-const TeamSection: React.FC = () => {
+const OldTeamSection: React.FC = () => {
   const team = [
     {
       name: "Alex Martin",
@@ -23,12 +23,6 @@ const TeamSection: React.FC = () => {
       role: "Lead Développeur",
       image: "",
       bio: "Spécialiste en développement full-stack avec une expertise en architectures cloud modernes.",
-    },
-    {
-      name: "Aline Ndiaye",
-      role: "Experte IA & Données",
-      image: "",
-      bio: "Docteure en intelligence artificielle avec une expertise dans l'analyse de données et le machine learning.",
     },
   ];
 
@@ -87,4 +81,4 @@ const TeamSection: React.FC = () => {
   );
 };
 
-export default TeamSection;
+export default OldTeamSection;
