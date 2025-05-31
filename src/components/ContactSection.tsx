@@ -35,7 +35,7 @@ const ContactSection: React.FC = () => {
     {
       icon: <Building className="h-5 w-5" />,
       title: "Bureau",
-      value: "Paris, France",
+      value: "Dakar, Senegal",
       link: "#"
     }
   ];
