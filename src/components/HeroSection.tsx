@@ -27,7 +27,7 @@ const HeroSection: React.FC = () => {
               className="text-lg md:text-xl text-foreground/80 max-w-xl"
               style={{opacity: 0, animation: "fade-in 0.8s ease-out 0.4s forwards"}}
             >
-              AMSA Solutions transforme votre vision en solutions technologiques 
+              CODAXE transforme votre vision en solutions technologiques 
               innovantes. Notre expertise en ingénierie logicielle propulse votre 
               entreprise vers l'avenir numérique.
             </p>
@@ -77,7 +77,7 @@ const HeroSection: React.FC = () => {
           <div className="w-full lg:w-1/2 mt-12 lg:mt-0" style={{opacity: 0, animation: "fade-in 0.8s ease-out 0.8s forwards"}}>
             <div className="relative flex justify-center">
               <div className="absolute inset-0 bg-gradient-radial from-amsa-blue/30 to-transparent rounded-full blur-3xl"></div>
-              <img src={logo} alt="logo" className="w-96 h-96 relative z-10"/>
+              <img src={logo} alt="logo" className="w-auto h-72 relative z-10"/>
             </div>
           </div>
         </div>
