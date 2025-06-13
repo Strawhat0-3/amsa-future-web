@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-2">
             <div className="text-2xl font-bold mb-4">
-              <span className="text-gradient">AMSA</span> Solutions
+              <span className="text-gradient">COD</span>AXE
             </div>
             <p className="text-foreground/70 max-w-md">
               Transformez votre entreprise avec nos solutions technologiques innovantes.
@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-foreground/60">
-            &copy; {currentYear} AMSA Solutions. Tous droits réservés.
+            &copy; {currentYear}  CODAXE. Tous droits réservés.
           </p>
           
           <div className="flex space-x-6">

@@ -39,7 +39,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <div className="text-2xl font-bold">
-            <span className={`${theme === 'light' ? 'text-teyliom-blue' : 'text-gradient'}`}>AMSA</span> Solutions
+            <span className={`${theme === 'light' ? 'text-teyliom-blue' : 'text-gradient'}`}>COD</span>AXE
           </div>
         </div>
 

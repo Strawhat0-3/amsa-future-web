@@ -52,7 +52,7 @@ const AboutSection: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="section-title">À Propos de Nous</h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto text-foreground/80">
-            Chez AMSA Solutions, nous sommes passionnés par la création de logiciels
+            Chez CODAXE, nous sommes passionnés par la création de logiciels
             qui transforment la façon dont les entreprises fonctionnent dans l'ère numérique.
           </p>
         </div>
