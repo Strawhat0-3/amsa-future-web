@@ -1,24 +1,9 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { 
-  Card, 
-  CardContent, 
-  CardDescription, 
-  CardHeader, 
-  CardTitle 
-} from "@/components/ui/card";
 import { Mail, MessageSquare, Building } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 const ContactSection: React.FC = () => {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In a real implementation, this would send the form data to a server
-    alert("Merci pour votre message ! Nous vous contacterons rapidement.");
-  };
-
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
@@ -52,72 +37,7 @@ const ContactSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm h-full">
-              <CardHeader>
-                <CardTitle>Envoyez-nous un message</CardTitle>
-                <CardDescription>
-                  Complétez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Nom
-                      </label>
-                      <Input
-                        id="name"
-                        placeholder="Votre nom"
-                        required
-                        className="bg-background/50"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email
-                      </label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="votre.email@exemple.com"
-                        required
-                        className="bg-background/50"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
-                      Sujet
-                    </label>
-                    <Input
-                      id="subject"
-                      placeholder="Sujet de votre message"
-                      required
-                      className="bg-background/50"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Message
-                    </label>
-                    <Textarea
-                      id="message"
-                      placeholder="Détaillez votre projet ou votre demande..."
-                      rows={5}
-                      required
-                      className="bg-background/50"
-                    />
-                  </div>
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-amsa-purple hover:bg-amsa-purple/90"
-                  >
-                    Envoyer le message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            <ContactForm />
           </div>
 
           <div className="flex flex-col justify-between">
