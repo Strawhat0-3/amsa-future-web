@@ -8,8 +8,8 @@ const ContactSection: React.FC = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email",
-      value: "contact@amsa-solutions.com",
-      link: "mailto:contact@amsa-solutions.com"
+      value: "codaxe@gmail.com",
+      link: "mailto:codaxe@gmail.com"
     },
     {
       icon: <MessageSquare className="h-5 w-5" />,
@@ -72,18 +72,7 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-auto">
-              <div className="p-6 bg-amsa-purple/10 rounded-lg border border-amsa-purple/20">
-                <h4 className="font-semibold mb-2">Consultation gratuite</h4>
-                <p className="text-sm mb-4">
-                  Réservez une session de consultation de 30 minutes avec nos experts pour 
-                  discuter de votre projet et explorer les solutions possibles.
-                </p>
-                <Button variant="outline" className="w-full border-amsa-purple text-amsa-purple hover:bg-amsa-purple/20">
-                  Réserver maintenant
-                </Button>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
